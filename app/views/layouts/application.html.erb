@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TemplateRubyOnRails</title>
+    <title>Tech Guides</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
 
   <body>
+   <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="<%= pages_about_path %>">About</a></li>
+        <li><a href="<%= pages_contact_path %>">Components</a></li>
+        <li><a href="<%= pages_events_path %>">Javascript</a></li>
+        <li><a href="<%= pages_guides_path %>">Mobile</a></li>
+        <li><a href="<%= pages_tools_path %>">Mobile</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+        <li><a href="<%= pages_about_path %>">About</a></li>
+        <li><a href="<%= pages_contact_path %>">Components</a></li>
+        <li><a href="<%= pages_events_path %>">Javascript</a></li>
+        <li><a href="<%= pages_guides_path %>">Mobile</a></li>
+        <li><a href="<%= pages_tools_path %>">Mobile</a></li>
+  </ul>
+
+  <div class="row">
+    <div class="col m10 offset-m1">
     <%= yield %>
+    </div>
+  </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+  </script>
   </body>
 </html>
