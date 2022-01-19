@@ -13,4 +13,13 @@ class PagesController < ApplicationController
 
   def tools
   end
+
+  def ideas
+  end
+
+  def careers
+  end
+
+  def work
+  end
 end
